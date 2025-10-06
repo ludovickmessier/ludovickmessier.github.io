@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ludesign</title>
 
+    <title>Ludesign</title>
     <link rel="icon" type="image/png" href="images/icon.png">
 
     <link rel="stylesheet" href="css/style.css">
@@ -13,41 +13,57 @@
 
 <body>
     <header>
-        <h1>Ludesign</h1>
+        <span class="header-title">Ludesign</span>
 
         <nav>
             <div class="navigation-item" id="navigation-toggle">
-
                 <span class="navigation-text">Accueil</span>
-
-                <img src="images/fleche.svg" alt="fleche" />
+                <img src="images/fleche.svg" alt="Flèche">
 
                 <ul class="dropdown-menu">
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="/design/">Design</a></li>
-                    <li><a href="/web">Web</a></li>
-                    <li><a href="/audio">Audio</a></li>
+                    <li><a href="/web/">Web</a></li>
+                    <li><a href="/audio/">Audio</a></li>
                     <li class="separator"></li>
-                    <li class="contact"><a href="/contact">Me contacter</a></li>
+                    <li class="contact"><a href="/contact/">Me Contacter</a></li>
                 </ul>
             </div>
         </nav>
     </header>
-
     <main>
         <h1>Accueil</h1>
-        <h3><i>Ce site est en construction.</i></h3>
-        <h2>Design</h2>
 
-        <p>
-            <img src="images/designer.jpg" width="350" alt="Illustration de design">
-        </p>
+        <p class="message-accueil">🚧 Ce site est en construction 🚧</p>
 
-        <p>
-            Pour des designs originales qui attirent l'œil,<br />
-            d'affiches publicitaires aux cartes d'affaires, ludesign est là pour vous aider!
-        </p>
+        <h2>Design, web, audio, et plus!</h2>
+
+        <div class="block-paragraph">
+            <a href="/design/">
+                <img src="images/designer.jpg" alt="Illustration de designer">
+            </a>
+            <p>
+                Pour des designs qui attirent l'œil. Des affiches publicitaires aux cartes d'affaires,
+                Ludesign est là pour vous aider !
+            </p>
+        </div>
+
+        <div class="block-paragraph">
+            <a href="/web/">
+                <img src="images/illustration_web.png" alt="Illustration de page web">
+            </a>
+            <p>
+                Pour des sites web à votre goût et qui <b>apparaîssent</b> dans
+                les recherches Google, la solution, c'est Ludesign.
+            </p>
+        </div>
     </main>
+
+    <footer>
+        <p><a href="mailto:ludovickmessier27@icloud.com">Courriel: ludovickmessier27@icloud.com</a> | 📍 Sainte-Adèle,
+            Québec, Canada</p>
+    </footer>
     <script src="scripts/script.js"></script>
 </body>
+
 </html>

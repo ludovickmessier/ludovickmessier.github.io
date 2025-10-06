@@ -26,17 +26,19 @@ header {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
-    z-index: 1000;
+    align-content: center;
+    margin-left: 2%;
+    margin-right: 2%;
+    z-index: 1e3;
 }
 
 header .header-title {
+    margin-left: 20px;
     font-size: 22px;
 }
 
 header nav {
+    margin-right: 20px;
     font-size: 18px;
     align-content: center;
 }
@@ -108,21 +110,15 @@ header nav {
     font-size: 15px;
 }
 
-main .image-paragraph {
-    display: flex;
-    align-items: center;
-}
-
 main .message-accueil {
-    font-size: 18px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     color: orange;
     text-align: center;
 }
 
 main h1 {
     margin-top: 100px;
-    margin-bottom: 40px;
+    margin-bottom: 100px;
     font-size: 35px;
     text-align: center;
 }
@@ -149,36 +145,13 @@ main p img {
     display: inline-block;
 }
 
-footer::before {
-    content: "";
-    display: block;
-    width: 250px;
-    height: 1.5px;
-    margin: 5px auto 0;
-    margin-bottom: 30px;
-    background-color: gray;
-}
-
 footer {
-    text-align: center;
     padding: 2rem;
-    margin-top: 20px;
+    margin: 0;
 }
 
 .block-paragraph {
-    text-align: center;
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-.block-paragraph img {
-    width: 350px;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px;
-    /* centre l’image et ajoute un petit espace dessous */
-}
-
-.block-paragraph p {
-    margin: 0;
+    text-align: justify;
+    max-width: 500px;
+    margin: 0 auto;
 }
