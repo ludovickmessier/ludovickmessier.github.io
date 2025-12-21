@@ -1,0 +1,36 @@
+:root {
+    --Brown: #CF7041;
+    --Pink: #E5C5BD;
+    --Yellow: #E2A55E;
+    --Blue: #5E718B;
+    --Green: #96AA9A;
+    --Gray: #B4BfC5;
+
+    --Black: #1E1E1E;
+    --Red: #C94A4A;
+    --White: #FAFAFA;
+}
+
+h1 {
+    margin-right: 20px;
+    font-weight: 200;
+    font-size: 30px;
+}
+
+p#contact-message {
+    font-size: 18px;
+}
+
+main {
+    height: 80vh;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    p#contact-message {
+        font-size: 14px;
+    }
+}
