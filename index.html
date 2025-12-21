@@ -1,69 +1,107 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ludesign</title>
-    <link rel="icon" type="image/png" href="images/icon.png">
+    <title>Ludesign | Accueil</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <header>
-        <span class="header-title">Ludesign</span>
+    <div class="page-top">
+        <header>
+            <span class="logo">Ludesign</span>
 
-        <nav>
-            <div class="navigation-item" id="navigation-toggle">
-                <span class="navigation-text">Accueil</span>
-                <img src="images/fleche.svg" alt="Flèche">
+            <button class="menu-toggle" aria-expanded="false" aria-label="Menu">
+                ☰
+            </button>
+            
 
-                <ul class="dropdown-menu">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="/design/">Design</a></li>
-                    <li><a href="/web/">Web</a></li>
-                    <li><a href="/audio/">Audio</a></li>
-                    <li class="separator"></li>
-                    <li class="contact"><a href="/contact/">Me Contacter</a></li>
+            <nav>
+                <ul>
+                    <li><a class="link" href="/">Accueil</a></li>
+                    <li><a class="link" href="/">Web</a></li>
+                    <li><a class="link" href="/">Design</a></li>
+                    <li><a class="link" href="/">Contact</a></li>
                 </ul>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
+
+        <nav class="mobile-menu" aria-hidden="true">
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/">Web</a></li>
+                <li><a href="/">Design</a></li>
+                <li><a href="/">Contact</a></li>
+            </ul>
+        </nav>        
+
+        <h1 class="load-animation-1">Gagnez la confiance de vos clients<br>au premier coup d'œil</h1>
+        <p class="load-animation-2">Ludesign offre des sites web et des designs qui inspirent confiance et crédibilité.
+        </p>
+    </div>
+
+    <hr>
+
     <main>
-        <h1>Accueil</h1>
+        <h2 class="presentation">Des sites web clairs, performants et visibles sur Google, où chaque détail compte pour
+            un résultat élégant et efficace.</h2>
+        <p><a class="link" href="">En savoir plus</a></p>
 
-        <p class="message-accueil">🚧 Ce site est en construction 🚧</p>
+        <section id="approche">
+            <h2>Mon approche</h2>
+            <p>De l'idée à votre projet</p>
 
-        <h2>Design, web, audio, et plus!</h2>
+            <div class="accordion">
+                <div class="accordion-item item1">
+                    <button class="accordion-title" aria-expanded="false">On discute de votre projet</button>
+                    <div class="accordion-content">
+                        <p>Je prends le temps de discuter avec vous pour comprendre vos objectifs, vos besoins et votre
+                            vision. Chaque détail compte pour un résultat de qualité.</p>
+                    </div>
+                </div>
 
-        <div class="block-paragraph">
-            <a href="/design/">
-                <img src="images/designer.jpg" alt="Illustration de designer">
-            </a>
-            <p>
-                Pour des designs qui attirent l'œil. Des affiches publicitaires aux cartes d'affaires,
-                Ludesign est là pour vous aider !
-            </p>
-        </div>
+                <div class="accordion-item item2">
+                    <button class="accordion-title" aria-expanded="false">Je propose une solution claire et
+                        adaptée</button>
+                    <div class="accordion-content">
+                        <p>Je vous propose une solution précise, adaptée à vos objectifs et à votre public cible, avec
+                            un
+                            design réfléchi et une structure optimisée.</p>
+                    </div>
+                </div>
 
-        <div class="block-paragraph">
-            <a href="/web/">
-                <img src="images/illustration_web.png" alt="Illustration de page web">
-            </a>
-            <p>
-                Pour des sites web à votre goût et qui <b>apparaîssent</b> dans
-                les recherches Google, la solution, c'est Ludesign.
-            </p>
-        </div>
+                <div class="accordion-item item3">
+                    <button class="accordion-title" aria-expanded="false">Je crée le site ou le design en
+                        étapes</button>
+                    <div class="accordion-content">
+                        <p>Votre site ou design est développé par étapes. À chaque étape, vous pouvez suivre le progrès,
+                            donner votre avis et ajuster pour obtenir un résultat final parfaitement aligné avec vos
+                            attentes.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item item4">
+                    <button class="accordion-title" aria-expanded="false">Livraison et finition</button>
+                    <div class="accordion-content">
+                        <p>Une fois validé, vous recevez le produit final, performant et esthétiquement cohérent, qui
+                            saura
+                            capter l’attention et fidéliser vos futurs clients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p><a href="mailto:ludovickmessier27@icloud.com">Courriel: ludovickmessier27@icloud.com</a> | 📍 Sainte-Adèle,
-            Québec, Canada</p>
+        <a href="mailto:ludovickmessier27@icloud.com">courriel : ludovickmessier27@icloud.com</a>
+        <br>
+        &copy; 2025 Ludesign
     </footer>
-    <script src="scripts/script.js"></script>
+
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>

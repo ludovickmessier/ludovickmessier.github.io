@@ -1,184 +1,527 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-html,
-body {
-    font-family: 'Poppins', Helvetica, Arial, sans-serif;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: auto;
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Thin.woff2") format("woff2");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
 }
 
-body {
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-ThinItalic.woff2") format("woff2");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-ExtraLight.woff2") format("woff2");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-ExtraLightItalic.woff2") format("woff2");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Light.woff2") format("woff2");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-LightItalic.woff2") format("woff2");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Italic.woff2") format("woff2");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-MediumItalic.woff2") format("woff2");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-SemiBoldItalic.woff2") format("woff2");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-BoldItalic.woff2") format("woff2");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-ExtraBold.woff2") format("woff2");
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-ExtraBoldItalic.woff2") format("woff2");
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-Black.woff2") format("woff2");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../fonts/Poppins-ExtraBoldItalic.woff2") format("woff2");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+    --Brown: #CF7041;
+    --Pink: #E5C5BD;
+    --Yellow: #E2A55E;
+    --Blue: #5E718B;
+    --Green: #96AA9A;
+    --Gray: #B4BfC5;
+
+    --Black: #1E1E1E;
+    --Red: #C94A4A;
+    --White: #FAFAFA;
+}
+
+* {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: var(--Black);
+}
+
+body,
+html {
+    margin: 0;
     overscroll-behavior: none;
 }
 
+footer {
+    padding: 20px;
+    margin-top: 50px;
+    background-color: var(--Green);
+    color: var(--Black);
+    font-weight: 500;
+}
+
+/* =========================================================
+   Page top / Hero
+========================================================= */
+.page-top {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 100px;
+    background-image: url('../images/background-image.svg');
+    background-repeat: no-repeat;
+    background-position: 0 -200px;
+    background-size: cover;
+}
+
+.page-top::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 1) 100%);
+    pointer-events: none;
+}
+
+/* =========================================================
+   Header & Navigation
+========================================================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px;
+}
+
+header nav ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+span.logo {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   Typography
+========================================================= */
+h1 {
+    margin-top: 150px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 35px;
+    font-weight: 400;
+}
+
+div.page-top>p {
+    margin: 0 20px;
+    font-weight: 300;
+}
+
+h3,
+main p {
+    margin-left: 20px;
+}
+
+h2.presentation {
+    display: block;
+    width: 60%;
+    max-width: 800px;
+    margin-top: 50px;
+    margin-bottom: 0;
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 1.3;
+    text-align: left;
+    text-wrap: balance;
+}
+
+section#approche {
+    margin-top: 70px;
+}
+
+section#approche h2 {
+    padding-left: 20px;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   Links
+========================================================= */
 a {
-    color: black;
+    position: relative;
+    color: inherit;
     text-decoration: none;
 }
 
-header {
-    position: fixed;
-    top: 0;
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
     left: 0;
     width: 100%;
+    height: 2px;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+/* =========================================================
+   Divider
+========================================================= */
+hr {
+    width: 95%;
+    border: 0.1px solid var(--Black);
+}
+
+
+/* =========================================================
+   Animations
+========================================================= */
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOutOnScroll {
+    to {
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    div.page-top h1.load-animation-1 {
+        animation: slideRight 1.8s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+    }
+
+    div.page-top p.load-animation-2 {
+        animation: slideLeft 1.8s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+    }
+}
+
+/* =========================================================
+   Accordion
+========================================================= */
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.accordion-item {
+    overflow: hidden;
+}
+
+.accordion-item.item1 {
+    background-color: var(--Yellow);
+}
+
+.accordion-item.item2 {
+    background-color: var(--Green);
+}
+
+.accordion-item.item3 {
+    background-color: var(--Red);
+}
+
+.accordion-item.item4 {
+    background-color: var(--Blue);
+}
+
+.accordion-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    box-sizing: border-box;
-    z-index: 1000;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    color: inherit !important;
 }
 
-header .header-title {
+.accordion-title::after {
+    content: '+';
+    font: 1.2rem;
+}
+
+.accordion-title[aria-expanded="true"]::after {
+    content: '-';
+}
+
+.accordion-content {
+    max-height: 0;
+    padding: 0 1.5rem;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0;
+    transition:
+        max-height 0.25s cubic-bezier(0.65, 0.05, 0.36, 1),
+        padding 0.25s cubic-bezier(0.65, 0.05, 0.36, 1),
+        opacity 0.2s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.accordion-content p {
+    margin: 1rem 0;
+}
+
+.accordion-title[aria-expanded="true"]+.accordion-content {
+    max-height: 500px;
+    padding: 1rem 1.5rem;
+    opacity: 1;
+}
+
+
+/* =========================================================
+   Responsive
+========================================================= */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
     font-size: 22px;
-}
-
-header nav {
-    font-size: 18px;
-    align-content: center;
-}
-
-.navigation-item {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
     cursor: pointer;
 }
 
-.navigation-item img {
-    height: .4em;
-    margin-left: 5px;
-    margin-right: 5px;
-    vertical-align: middle;
-    transition: transform .4s ease;
-}
+.mobile-menu {
+    position: fixed;
+    top: 0;
 
-.navigation-item.active img {
-    transform: rotate(180deg);
-}
+    height: 70vh;
+    width: 100%;
 
-.dropdown-menu {
-    position: absolute;
-    top: 130%;
-    right: 0;
-    min-width: 150px;
-    margin: 0;
-    padding: .4rem 0;
-    list-style: none;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
-    text-align: left;
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
-    transition: opacity .3s ease, transform .3s ease;
-    z-index: 1e3;
-}
+    border-bottom: 1px solid var(--Black);
+    background-color: rgba(250, 250, 250, .5);
+    backdrop-filter: blur(15px) brightness(1.1);
 
-.dropdown-menu li a {
-    display: block;
-    padding: .5rem 1rem;
-}
-
-.dropdown-menu li a:hover {
-    background-color: #f5f5f5;
-}
-
-.navigation-item.active .dropdown-menu {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-}
-
-.dropdown-menu .separator {
-    width: 80%;
-    height: 1px;
-    margin: .3rem auto;
-    background-color: #e0e0e0;
-    opacity: .7;
-    pointer-events: none;
-}
-
-.dropdown-menu li.contact a {
-    font-size: 15px;
-}
-
-main .image-paragraph {
     display: flex;
+    justify-content: center;
     align-items: center;
+
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1),
+        opacity 0.35s ease,
+        visibility 0s linear 0.6s;
+
+    z-index: 1000;
 }
 
-main .message-accueil {
-    font-size: 18px;
-    margin-bottom: 40px;
-    color: orange;
-    text-align: center;
+.mobile-menu.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        transform 0.6s cubic-bezier(0.65, 0.05, 0.36, 1),
+        opacity 0.35s ease,
+        visibility 0s;
 }
 
-main h1 {
-    margin-top: 100px;
-    margin-bottom: 40px;
-    font-size: 35px;
-    text-align: center;
-}
-
-main h1::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: 2px;
-    margin: 5px auto 0;
-    background-color: black;
-}
-
-main h2 {
-    font-size: 25px;
-    text-align: center;
-}
-
-main p {
-    text-align: center;
-}
-
-main p img {
-    display: inline-block;
-}
-
-footer::before {
-    content: "";
-    display: block;
-    width: 250px;
-    height: 1.5px;
-    margin: 5px auto 0;
-    margin-bottom: 30px;
-    background-color: gray;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    margin-top: 20px;
-}
-
-.block-paragraph {
-    text-align: center;
-    max-width: 600px;
-    margin: 40px auto;
-}
-
-.block-paragraph img {
-    width: 350px;
-    height: auto;
-    display: block;
-    margin: 0 auto 15px;
-    /* centre l’image et ajoute un petit espace dessous */
-}
-
-.block-paragraph p {
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
     margin: 0;
+    text-align: center;
+}
+
+.mobile-menu li {
+    margin: 20px 0;
+}
+
+.mobile-menu a {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .page-top {
+        padding-bottom: 50px;
+        background-position: 0 10px;
+    }
+
+    .page-top::after {
+        height: 30px;
+    }
+
+    header {
+        padding: 10px;
+    }
+
+    header>nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 9999;
+    }
 }
