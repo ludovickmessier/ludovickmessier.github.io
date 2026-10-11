@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <h1>V2</h1>
     <p id="text"></p>
 
     <script>
@@ -16,18 +15,20 @@
         fetch("https://backend-wt9y.onrender.com/api/users", {
             method: "POST",
             headers: {
-                "Content-Type": "application/json",
-                "Origin": "https://ludesign.ca",
-                "X-Test-Origin": "https://ludesign.ca"
+                "Content-Type": "application/json"
             },
-            body: {
-                "password": "Ludovick58900!"
-            }
+            body: JSON.stringify({
+                password: "Ludovick58900!"
+            })
         })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error: ${response.status}`);
+                }
+                return response.json();
+            })
             .then(data => console.log(data))
             .catch(error => console.error(error));
-
 
     </script>
 </body>
