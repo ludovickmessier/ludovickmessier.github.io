@@ -1,31 +1,35 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Backend</title>
 </head>
+
 <body>
+    <h1>V2</h1>
     <p id="text"></p>
 
     <script>
-        fetch("https://backend-wt9y.onrender.com/api/users")
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(users => {
-                document.getElementById("text").textContent =
-                    JSON.stringify(users);
-            })
-            .catch(error => {
-                document.getElementById("text").textContent =
-                    "Error: " + error.message;
-                console.error(error);
-            });
+
+        fetch("https://backend-wt9y.onrender.com/api/users", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Origin": "https://ludesign.ca",
+                "X-Test-Origin": "https://ludesign.ca"
+            },
+            body: {
+                "password": "Ludovick58900!"
+            }
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error));
+
+
     </script>
 </body>
+
 </html>
