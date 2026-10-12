@@ -4,33 +4,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Backend</title>
+    <title>Login Page</title>
+
+    <style>
+        /* ===== Login Page ===== */
+
+        :root {
+            --bg: #09090b;
+            --card: rgba(255, 255, 255, 0.045);
+            --border: rgba(255, 255, 255, 0.1);
+            --text: #fafafa;
+            --muted: #a1a1aa;
+            --accent: #a3e635;
+            --accent-hover: #bef264;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            box-sizing: border-box;
+
+            font-family: Inter, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+
+            color: var(--text);
+            background:
+                radial-gradient(ellipse at 20% 10%,
+                    rgba(163, 230, 53, 0.09), transparent 45%),
+                radial-gradient(ellipse at 85% 90%,
+                    rgba(59, 130, 246, 0.08), transparent 40%),
+                var(--bg);
+        }
+
+        /* Login card */
+
+        #login-form {
+            width: 100%;
+            max-width: 390px;
+            box-sizing: border-box;
+            padding: 40px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+
+            box-shadow:
+                0 24px 80px rgba(0, 0, 0, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Heading */
+
+        #login-form h1 {
+            margin: 0;
+            font-size: 30px;
+            font-weight: 700;
+            letter-spacing: -1.2px;
+        }
+
+        #login-form p {
+            margin: -12px 0 4px;
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Labels */
+
+        #login-form label {
+            display: block;
+            margin-bottom: 8px;
+
+            font-size: 13px;
+            font-weight: 500;
+            color: #e4e4e7;
+        }
+
+        /* Inputs */
+
+        #login-form input:not([type="submit"]):not([type="checkbox"]) {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 14px 15px;
+
+            color: var(--text);
+            background: rgba(255, 255, 255, 0.035);
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            outline: none;
+
+            font: inherit;
+            font-size: 14px;
+
+            transition:
+                border-color 180ms ease,
+                background 180ms ease,
+                box-shadow 180ms ease;
+        }
+
+        #login-form input::placeholder {
+            color: #71717a;
+        }
+
+        #login-form input:not([type="submit"]):focus {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.055);
+            box-shadow: 0 0 0 4px rgba(163, 230, 53, 0.1);
+        }
+
+        /* Submit button */
+
+        #login-form input[type="submit"],
+        #login-form button[type="submit"] {
+            width: 100%;
+            padding: 14px 18px;
+            margin-top: 4px;
+
+            border: none;
+            border-radius: 12px;
+
+            background: var(--accent);
+            color: #171717;
+
+            font: inherit;
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition:
+                transform 180ms ease,
+                background 180ms ease,
+                box-shadow 180ms ease;
+        }
+
+        #login-form input[type="submit"]:hover,
+        #login-form button[type="submit"]:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(163, 230, 53, 0.15);
+        }
+
+        #login-form input[type="submit"]:active,
+        #login-form button[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        /* Links */
+
+        #login-form a {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        #login-form a:hover {
+            text-decoration: underline;
+        }
+
+        /* Status message */
+
+        #login-message {
+            margin: 0;
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* Mobile */
+
+        @media (max-width: 480px) {
+            body {
+                padding: 16px;
+            }
+
+            #login-form {
+                padding: 28px 22px;
+                border-radius: 20px;
+            }
+
+            #login-form h1 {
+                font-size: 27px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            #login-form input,
+            #login-form button {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <p id="userr">USER HERE</p>
+    <h1 id="username-display"></h1>
     <form id="login-form">
-        <input type="text" id="login-username" placeholder="Username" required>
-        <input type="password" id="login-password" placeholder="Password" required>
+
+        <h1>Welcome back</h1>
+        <p>Sign in to continue to your account.</p>
+
+        <div>
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" placeholder="Username" required>
+        </div>
+
+        <div>
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Password" required>
+        </div>
 
         <button type="submit">Log in</button>
         <p id="login-message"></p>
     </form>
 
-    <form id="create-user-form">
+    <form id="create-user-form" hidden>
         <input type="text" id="new-username" placeholder="Username" required>
         <input type="email" id="new-email" placeholder="Email" required>
         <input type="password" id="new-password" placeholder="Password" required>
         <input type="text" id="new-name" placeholder="Full name" required>
-    
+
         <button type="submit">Create account</button>
         <p id="create-user-message"></p>
     </form>
 
-    <script>
-                const pUserr = document.getElementById("userr");
 
+    <script>
         const API_URL = "https://api.ludesign.ca";
+
+        const usernameDisplay = document.getElementById("username-display");
 
         document.getElementById("login-form").addEventListener("submit", async (event) => {
             event.preventDefault();
@@ -53,7 +266,6 @@
 
                 if (response.ok) {
                     message.textContent = "Login successful!";
-                    // Example: window.location.href = "/cms.html";
                 } else {
                     message.textContent = data.error || "Login failed.";
                 }
@@ -93,31 +305,29 @@
                 console.error(error);
             }
         });
-        async function checkLogin() {
-    try {
-        const response = await fetch(`${API_URL}/me`, {
-            credentials: "include"
-        });
 
-        if (!response.ok) {
-            console.log("User is not logged in.");
-            pUserr.textContent = "No user";
-            return;
+        async function checkLogin() {
+            try {
+                const response = await fetch(`${API_URL}/me`, {
+                    credentials: "include"
+                });
+
+                if (!response.ok) {
+                    console.log("User is not logged in.");
+                    usernameDisplay.textContent = "";
+                    return;
+                }
+
+                const data = await response.json();
+
+                console.log("Already logged in:", data.user);
+                usernameDisplay.textContent = data.user.username;
+            } catch (error) {
+                console.error("Could not check login:", error);
+            }
         }
 
-        const data = await response.json();
-
-        console.log("Already logged in:", data.user);
-         pUserr.textContent = data.user.username;
-
-        // Example:
-        // Show the CMS if the user is authorized.
-    } catch (error) {
-        console.error("Could not check login:", error);
-    }
-}
-
-checkLogin();
+        checkLogin();
     </script>
 </body>
 
