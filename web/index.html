@@ -90,6 +90,29 @@
                 console.error(error);
             }
         });
+        async function checkLogin() {
+    try {
+        const response = await fetch(`${API_URL}/me`, {
+            credentials: "include"
+        });
+
+        if (!response.ok) {
+            console.log("User is not logged in.");
+            return;
+        }
+
+        const data = await response.json();
+
+        console.log("Already logged in:", data.user);
+
+        // Example:
+        // Show the CMS if the user is authorized.
+    } catch (error) {
+        console.error("Could not check login:", error);
+    }
+}
+
+checkLogin();
     </script>
 </body>
 
